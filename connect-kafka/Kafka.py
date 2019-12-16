@@ -22,8 +22,8 @@ def main():
     t_env = StreamTableEnvironment.create(exec_env, t_config)
 
     mySink_file = "/tmp/mySink_file.txt"
-    if os.path.exists(result_file):
-        os.remove(result_file)
+    if os.path.exists(mySink_file):
+        os.remove(mySink_file)
 
     t_env.connect(
                 Kafka()
